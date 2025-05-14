@@ -1,0 +1,21 @@
+# To run the project: pipenv run streamlit run medibot.py
+
+# New:     pipenv run uvicorn medibot:app --reload
+# pipenv run uvicorn app:app --reload
+
+
+
+
+
+
+
+
+
+
+
+
+# Successfully run the app with:
+# python app.py
+
+
+# When change the pdf: pipenv run python create_memory_for_llm.py

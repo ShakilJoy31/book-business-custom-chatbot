@@ -42,6 +42,7 @@ def main():
         st.chat_message(message['role']).markdown(message['content'])
 
     prompt = st.chat_input("Pass your prompt here")
+    print(prompt)
 
     if prompt:
         st.chat_message('user').markdown(prompt)
@@ -50,7 +51,7 @@ def main():
         CUSTOM_PROMPT_TEMPLATE = """
         Use the pieces of information provided in the context to answer user's question.
         If you dont know the answer, just say that you dont know, dont try to make up an answer. 
-        Dont provide anything out of the given context.
+        Dont provide anything out of the given context. 
 
         Context: {context}
         Question: {question}
