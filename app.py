@@ -68,7 +68,7 @@ def initialize_components():
         task="text-generation",
         temperature=0.5,
         model_kwargs={"max_length": 512},
-        huggingfacehub_api_token=HF_TOKEN
+        huggingfacehub_api_token='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'
     )
     
     # Create QA chain
