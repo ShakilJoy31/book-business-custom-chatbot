@@ -21,6 +21,8 @@ DB_FAISS_PATH = "vectorstore/db_faiss"
 HUGGINGFACE_REPO_ID = "mistralai/Mistral-7B-Instruct-v0.3"
 HF_TOKEN = os.environ.get("HF_TOKEN")
 
+
+
 # Define request model
 class QueryRequest(BaseModel):
     query: str
@@ -68,7 +70,7 @@ def initialize_components():
         task="text-generation",
         temperature=0.5,
         model_kwargs={"max_length": 512},
-        huggingfacehub_api_token='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'
+        huggingfacehub_api_token=HF_TOKEN
     )
     
     # Create QA chain
@@ -82,6 +84,8 @@ def initialize_components():
 
 @app.post("/query", response_model=QueryResponse)
 async def process_query(request: QueryRequest):
+    print(f"HF_TOKEN: {HF_TOKEN}")
+    print("Hello world.")
     if not qa_chain:
         raise HTTPException(status_code=500, detail="System not initialized properly")
     
